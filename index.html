@@ -7,17 +7,16 @@
 	<head>
 	<style>
 		body {
-	   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	   font-family: "Forte", "Forte", "Forte", Forte, Forte, "Forte", sans-serif;
 	   font-weight: 300;
-
-	 background: linear-gradient(141deg, 	#000000 0%, 	#000000 51%, 	#000000 75%);
+	 background: linear-gradient(141deg, 	#551a8b 0%, 	#551a8b 51%, 	#551a8b 75%);
 	 color:white;
 	 opacity:0.8;
 	 background-repeat: no-repeat;
-	 background-size: 1000px 750px;
+	 background-size: 1000px 750px
 		 }
 	h1 {
-		font-family: "Helvetica Neue";
+		font-family: "Forte";
 		font-size: 65px;
 		font-style: normal;
 		font-variant: normal;
@@ -25,7 +24,7 @@
 		line-height: 16px;
 	}
 	h4 {
-	font-family: "Helvetica Neue";
+	font-family: "Forte";
 		font-size: 14px;
 		font-style: normal;
 		font-variant: normal;
@@ -34,7 +33,7 @@
 	}
 	a {
 	text-decoration: none;
-	font-family: "Helvetica";
+	font-family: "Forte";
 	}
 	.button {
 	background-image:url("assets/Button.png");
@@ -42,13 +41,13 @@
 		width: 150px;
 		height: 50px;
 		opacity: 1;
-		box-shadow: 0px 0px 10px #000000;
-		border-radius: 1000px;
+		box-shadow: 0px 0px 5px #000000;
+		border-radius: 1px;
 
 	}
 	.buttontext {
 	padding-top: 10px;
-		font-size: 15pt;
+		font-size: 15pt
 		color:white;
 		text-decoration: none;
 		line-height: 30px;
@@ -56,15 +55,15 @@
 	.LogBox {
 		color: white;
 		background-color: black;
-		opacity: 0.7;
-		height: 100px;
-		border-radius: 20px;
-		text-align: left;
+		opacity: 1000;
+		height: 250px;
+		border-radius: 1px;
+		text-align: center;
 		padding-left: 10px;
 		padding-top: 10px;
-		white-space: pre-line;
+		white-space: normal;
+
 		overflow-y:auto;
-	}
 	hr {opacity: 0.5;}
 		</style>
 	<title>Rebel</title>
@@ -73,13 +72,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 
-	</head>
+</head>
 
 	<body>
 	<center>
-	<h1>Rebel</h1>
-	<p>private jailbreak for iOS <b>11.0 to 11.2.2</b></p>
-	<p>beta 6</p>
+	<h1>hex0n</h1>
+	<p>private jailbreak for iOS <b>11.0 to 11.2.5</b></p>
+	<p></p>
 	<br />
 
 	<div class="button">
@@ -89,16 +88,16 @@
 	</div>
 
 	<center>
-	<h4></h4><h2 id="status">*ready to run*</h2>
+	<h4></h4><h2 id="status"></h2>
+	<p>special thanks to:</p>
+	<p>Brandon Urgi & Zimperium</p>
 	</center>
 	</div>
 	</div>
 	<br />
 	<p>
-	<p>special thanks to:</p>
-	<p>Brandon Urgi & Zimperium</p>
 	<hr />
-	<p>Log</p>
+	<p></p>
 	<div class="LogBox" id="logbox">
 	LOG:<br />
 	</div>
@@ -327,7 +326,7 @@
 	setTimeout(go_, 2000);
 	}
 	function go_() {
-	document.getElementById('status').innerText = 'bypassing kppless...';
+	document.getElementById('status').innerText = 'bypassing KPPless...';
 	document.getElementById("Goer").innerText = 'jailbreaking...';
 		//Adds delay between exploit and current html changes!
 	setTimeout(kext, 5337);
@@ -336,11 +335,11 @@
 	function kext() {
 				//driveby();
 			main();
-		document.getElementById('status').innerText = 'failed';
+		document.getElementById('status').innerText = 'uh oh!';
 		document.getElementById("Goer").innerText = 'failed';
 			setTimeout(loadRes, 5666);
 			//setTimeout(respring, 16666);
-		document.getElementById('status').innerText = 'failed';
+		document.getElementById('status').innerText = 'uh oh!';
 		document.getElementById("Goer").innerText = 'failed';
 
 	}
