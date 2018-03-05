@@ -43,8 +43,8 @@ background-image:url("assets/Button.png");
 	width: 150px;
 	height: 50px;
 	opacity: 1;
-	box-shadow: 0px 0px 3px #000000;
-	border-radius: 10px;
+	box-shadow: 0px 0px 10px #000000;
+	border-radius: 1000px;
 
 }
 .buttontext {
@@ -79,7 +79,7 @@ hr {opacity: 0.5;}
 <body>
 <center>
 <h1>Rebel</h1>
-<p>for iOS <b>11.0 to 11.2.5 (WIP)</b></p>
+<p>private jailbreak for iOS <b>11.0 to 11.2.2</b></p>
 <br />
 
 <div class="button">
@@ -314,17 +314,20 @@ function main()
 
   // EXPLOIT CODE
 function go() {
-document.getElementById('status').innerText = 'Getting Resources...';
-document.getElementById('logbox').innerText += 'Getting Resources... \r\n';
+document.getElementById('status').innerText = 'installing cydia...';
+document.getElementById('logbox').innerText += 'instaling cydia... \r\n';
 document.getElementById("Goer").innerText = '';
 document.getElementById("Linker").disabled = true;
 document.getElementById("Goer").disabled = true;
 	//This is here to stop glitches!
-document.getElementById('status').innerText = 'escaping sandbox...';
+document.getElementById('status').innerText = 'running exploit...';
+document.getElementById("Goer").innerText = 'jailbreaking...';
+
 setTimeout(go_, 2000);
 }
 function go_() {
 document.getElementById('status').innerText = 'bypassing kppless...';
+document.getElementById("Goer").innerText = 'jailbreaking...';
 	//Adds delay between exploit and current html changes!
 setTimeout(kext, 5337);
 //L33T
@@ -332,10 +335,12 @@ setTimeout(kext, 5337);
 function kext() {
 			//driveby();
 		main();
-	document.getElementById('status').innerText = 'Found! Trying To Dump...';
+	document.getElementById('status').innerText = 'remounting...';
+	document.getElementById("Goer").innerText = 'jailbreaking...';
 		setTimeout(loadRes, 5666);
 		//setTimeout(respring, 16666);
-	document.getElementById('status').innerText = 'Out-Of-Bounds DUMPED!';
+	document.getElementById('status').innerText = 'remounted';
+	document.getElementById("Goer").innerText = 'jailbreaking...';
 
 }
 </script>
