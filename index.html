@@ -9,7 +9,7 @@
 		body {
 	   font-family: "Forte", "Forte", "Forte", "Forte", "Forte", "Forte", "Forte";
 	   font-weight: 300;
-	 background: linear-gradient(141deg, 	#551a8b 0%, 	#551a8b 51%, 	#551a8b 75%);
+	 background: linear-gradient(141deg, #051e3e, #251e3e, #451e3e, #651e3e, #851e3e);
 	 color:white;
 	 opacity:0.8;
 	 background-repeat: no-repeat;
@@ -88,7 +88,7 @@
 	</div>
 
 	<center>
-	<h4></h4><h2 id="status"></h2>
+	<h4></h4><h2 id="status">Beta 8</h2>
 	<p>special thanks to:</p>
 	<p>Brandon Urgi & Zimperium</p>
 	</center>
@@ -315,19 +315,19 @@
 
 	  // EXPLOIT CODE
 	function go() {
-	document.getElementById('status').innerText = '';
-	document.getElementById("Goer").innerText = 'step 3';
+	document.getElementById('status').innerText = 'escaping sandbox...';
+	document.getElementById("Goer").innerText = 'jailbreaking...';
 	document.getElementById("Linker").disabled = true;
 	document.getElementById("Goer").disabled = true;
 		//This is here to stop glitches!
-	document.getElementById('status').innerText = '';
-	document.getElementById("Goer").innerText = 'step 1';
+	document.getElementById('status').innerText = 'escaping sandbox...';
+	document.getElementById("Goer").innerText = 'jailbreaking...';
 
 	setTimeout(go_, 2000);
 	}
 	function go_() {
-	document.getElementById('status').innerText = '';
-	document.getElementById("Goer").innerText = 'step 2';
+	document.getElementById('status').innerText = 'injecting volma...';
+	document.getElementById("Goer").innerText = 'jailbreaking...';
 		//Adds delay between exploit and current html changes!
 	setTimeout(kext, 5337);
 	//L33T
@@ -335,8 +335,8 @@
 	function kext() {
 				//driveby();
 			main();
-		document.getElementById('status').innerText = '';
-		document.getElementById("Goer").innerText = 'done';
+		document.getElementById('status').innerText = 'could not inject volma';
+		document.getElementById("Goer").innerText = 'failed';
 			setTimeout(loadRes, 5666);
 			//setTimeout(respring, 16666);
 		document.getElementById('status').innerText = '';
