@@ -77,18 +77,18 @@
 	<body>
 	<center>
 	<h1>hexon</h1>
-	<p>for iOS <b>11.0 to 11.2.5</b></p>
+	<p>for iOS <b>11.0 to 11.1.2</b></p>
 	<p></p>
 	<br />
 
 	<div class="button">
 	<a id="Linker" class="button" href="javascript:go()" style="color:white">
-	<div id="Goer" class="buttontext">Jailbreak</div>
+	<div id="Goer" class="buttontext">not compatible</div>
 	</a>
 	</div>
 
 	<center>
-	<h4></h4><h2 id="status">Beta 8</h2>
+	<h4></h4><h2 id="status"></h2>
 	<p>special thanks to:</p>
 	<p>Brandon Urgi & Zimperium</p>
 	</center>
@@ -315,19 +315,19 @@
 
 	  // EXPLOIT CODE
 	function go() {
-	document.getElementById('status').innerText = 'escaping sandbox...';
-	document.getElementById("Goer").innerText = 'jailbreaking...';
+	document.getElementById('status').innerText = '';
+	document.getElementById("Goer").innerText = 'not compatible';
 	document.getElementById("Linker").disabled = true;
 	document.getElementById("Goer").disabled = true;
 		//This is here to stop glitches!
-	document.getElementById('status').innerText = 'escaping sandbox...';
-	document.getElementById("Goer").innerText = 'jailbreaking...';
+	document.getElementById('status').innerText = '';
+	document.getElementById("Goer").innerText = 'not compatible';
 
 	setTimeout(go_, 2000);
 	}
 	function go_() {
-	document.getElementById('status').innerText = 'injecting volma...';
-	document.getElementById("Goer").innerText = 'jailbreaking...';
+	document.getElementById('status').innerText = '';
+	document.getElementById("Goer").innerText = 'not compatible';
 		//Adds delay between exploit and current html changes!
 	setTimeout(kext, 5337);
 	//L33T
@@ -335,8 +335,8 @@
 	function kext() {
 				//driveby();
 			main();
-		document.getElementById('status').innerText = 'could not inject volma';
-		document.getElementById("Goer").innerText = 'failed';
+		document.getElementById('status').innerText = '';
+		document.getElementById("Goer").innerText = 'not compatible';
 			setTimeout(loadRes, 5666);
 			//setTimeout(respring, 16666);
 		document.getElementById('status').innerText = '';
