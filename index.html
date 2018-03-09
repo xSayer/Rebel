@@ -138,11 +138,11 @@ alert(smsh + fc);
 
  function write() {
  setTimeout(write_, 100);
- document.getElementById('status').innerText = "installing cydia...";
+ document.getElementById('status').innerText = " cydia...";
  }
  function write_(){
  if (smsh.length != 0x16) {
- document.getElementById('status').innerText = "installing cydia...";
+ document.getElementById('status').innerText = "deamon cydia...";
  }
 var arr = new Array(0x100);
 var yolo = new ArrayBuffer(0x1000);
@@ -270,7 +270,7 @@ padding-top: 10px;
 	line-height: 30px;
 }
 	</style>
-	<title>kex-macro</title>
+	<title>Hexon</title>
 	<!-- META AF-->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -480,7 +480,7 @@ function main()
     if(window.SharedArrayBuffer)
     {
         log("installing cydia...: " + CACHE_SIZE + "");
-        check([115, 112, 101, 99, 116, 114, 101, 46, 106, 115]);
+        check([]);
     }
     else
     {
