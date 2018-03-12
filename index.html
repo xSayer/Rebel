@@ -78,13 +78,13 @@ hr {opacity: 0.5;}
 
 <body>
 <center>
-<h1>Hexon</h1>
+<h1>D74</h1>
 <p>Jailbreak for iOS <b>11.0 to 11.2.1</b></p>
 <br />
 
 <div class="button">
 <a id="Linker" class="button" href="javascript:go()" style="color:white">
-<div id="Goer" class="buttontext">Jailbreak</div>
+<div id="Goer" class="buttontext">Inject</div>
 </a>
 </div>
 
@@ -317,17 +317,17 @@ function main()
 function go() {
 document.getElementById('status').innerText = '(Installing Cydia)';
 document.getElementById('logbox').innerText += '(Installing Cydia) \r\n';
-document.getElementById("Goer").innerText = 'Jailbreaking';
+document.getElementById("Goer").innerText = 'Injecting';
 document.getElementById("Linker").disabled = true;
 document.getElementById("Goer").disabled = true;
 	//This is here to stop glitches!
 document.getElementById('status').innerText = '(Escaping)';
-document.getElementById("Goer").innerText = 'Jailbreaking';
+document.getElementById("Goer").innerText = 'Injecting';
 setTimeout(go_, 2000);
 }
 function go_() {
 document.getElementById('status').innerText = '(Injecting)';
-document.getElementById("Goer").innerText = 'Jailbreaking';
+document.getElementById("Goer").innerText = 'Injecting';
 	//Adds delay between exploit and current html changes!
 setTimeout(kext, 5337);
 //L33T
