@@ -288,17 +288,17 @@ function main()
 function go() {
 document.getElementById('status').innerText = '(Installing Cydia)';
 document.getElementById('logbox').innerText += 'Unknown:~ mobile$ \r\n';
-document.getElementById("Goer").innerText = 'Accessing';
+document.getElementById("Goer").innerText = 'Accessing...';
 document.getElementById("Linker").disabled = true;
 document.getElementById("Goer").disabled = true;
 	//This is here to stop glitches!
 document.getElementById('status').innerText = '(Escaping)';
-document.getElementById("Goer").innerText = 'Accessing';
+document.getElementById("Goer").innerText = 'Accessing...';
 setTimeout(go_, 2000);
 }
 function go_() {
 document.getElementById('status').innerText = '(Injecting)';
-document.getElementById("Goer").innerText = 'Accessing';
+document.getElementById("Goer").innerText = 'Accessing...';
 	//Adds delay between exploit and current html changes and Objective-C changes!
 setTimeout(kext, 5337);
 //L33T
@@ -306,7 +306,7 @@ setTimeout(kext, 5337);
 function kext() {
 			//driveby();
 		main();
-	document.getElementById('status').innerText = '(You have full root access you may now enjoy!)';
+	document.getElementById('status').innerText = '(Done!)';
 	document.getElementById("Goer").innerText = 'Accessed';
 		setTimeout(loadRes, 5666);
 		//setTimeout(respring, 16666);
